@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2732" width="2048" height="2732">
-  <rect width="2048" height="2732" fill="#0d1117"/>
-  <rect x="964" y="1266" width="120" height="120" rx="28" fill="#162820"/>
-  <rect x="964" y="1266" width="120" height="120" rx="28" fill="#1a3c28" opacity="0.6"/>
-  <text x="1024" y="1346" text-anchor="middle" font-size="64">🌰</text>
-  <text x="1024" y="1426" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="700" font-size="28" fill="#e6edf3">Orchard OS</text>
-  <text x="1024" y="1462" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#8b949e">Walnut Farm Manager</text>
-</svg>
