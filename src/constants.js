@@ -227,7 +227,7 @@ export const ACT_TEMPLATES = [
 ];
 
 export const ACT_GUIDANCE = {
-  dormant_prune:   "✂️ Prune to open vase shape. Remove branches >1/3 parent diameter. Seal large cuts. Best June–July in NZ.",
+  dormant_prune:   "✂️ Prune to open vase shape. Remove branches >1/3 parent diameter. Seal large cuts. Best done in mid-winter before bud swell.",
   soil_test:       "🧪 Sample 5+ locations per block at 10–20cm. Test N, P, K, pH, trace elements. Use the same lab each year.",
   fertilise_n:     "🌱 60% at bud burst, 40% post-hull split. Avoid within 4 weeks of harvest. Typical 80–120 kg N/ha.",
   pest_monitor:    "🔍 Pherocon AM traps at 1/ha. Check weekly from October. Action threshold: 15 adults/trap/week.",

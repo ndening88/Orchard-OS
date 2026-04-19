@@ -203,7 +203,7 @@ export default function App() {
     const q=aiIn.trim();if(!q)return;
     setAiIn("");setAiLoad(true);
     const msgs=[...aiMsgs,{role:"user",content:q}];setAiMsgs(msgs);
-    const sys=`Expert walnut advisor. ${farmCtx()} ${userCtx()} Status: ${acts.filter(a=>a.status==="done").length}/${acts.length} done. Urgent: ${acts.filter(a=>a.priority==="high"&&a.status==="pending").length}. Logs: ${logs.slice(0,3).map(l=>`${l.date}: ${l.activity}—${l.note}`).join("; ")}. Forecast: ${wxSnippet()||"unavailable"}. Be concise, practical, NZ-specific. Address by first name.`;
+    const sys=`Expert walnut advisor. ${farmCtx()} ${userCtx()} Status: ${acts.filter(a=>a.status==="done").length}/${acts.length} done. Urgent: ${acts.filter(a=>a.priority==="high"&&a.status==="pending").length}. Logs: ${logs.slice(0,3).map(l=>`${l.date}: ${l.activity}—${l.note}`).join("; ")}. Forecast: ${wxSnippet()||"unavailable"}. Be concise, practical, and specific to the ${farm.location||"local"} region. Address by first name.`;
     try{const r=await callClaude(sys,q,aiMsgs);setAiMsgs([...msgs,{role:"assistant",content:r}]);}
     catch{setAiMsgs([...msgs,{role:"assistant",content:"Connection error. Please try again."}]);}
     setAiLoad(false);

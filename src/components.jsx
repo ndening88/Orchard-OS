@@ -248,7 +248,7 @@ export function Onboarding({ onComplete, isMobile }) {
 
           {/* Step 4 — Thresholds */}
           {step===4 && <div style={{ display:"flex", flexDirection:"column", gap:12 }}>
-            <div style={{ background:T.accentDim, border:`1px solid ${T.accent}33`, borderRadius:10, padding:"10px 14px", fontSize:12, color:T.textMuted, lineHeight:1.6 }}>◈ Pre-set to NZ best-practice defaults — adjust for your conditions.</div>
+            <div style={{ background:T.accentDim, border:`1px solid ${T.accent}33`, borderRadius:10, padding:"10px 14px", fontSize:12, color:T.textMuted, lineHeight:1.6 }}>◈ Pre-set to best-practice defaults for {farm.location?farm.location.split(",")[0]:"your region"} — adjust for your specific conditions.</div>
             <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
               <Field label="pH Min"             type="number" value={farm.soilPhMin}           onChange={v=>up("soilPhMin",parseFloat(v)||6)}           hint="Optimum: 6.0"/>
               <Field label="pH Max"             type="number" value={farm.soilPhMax}           onChange={v=>up("soilPhMax",parseFloat(v)||7)}           hint="Optimum: 7.0"/>
