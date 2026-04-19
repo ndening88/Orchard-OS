@@ -69,6 +69,136 @@ export const REGIONS = [
 ];
 // Keep old name as alias so existing imports don't break
 export const NZ_REGIONS = REGIONS;
+
+// ── Region-specific agronomic defaults ───────────────────────────────────
+// pH, moisture %, pest threshold, hull split %, spray dry window (hrs), coords, timezone
+export const REGION_DEFAULTS = {
+  // ── New Zealand ──────────────────────────────────────────────────────
+  // Northland: high rainfall, humid, slightly acidic soils, high husk fly pressure
+  "Northland, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:40, irrigationTargetMax:70,
+    pestThreshold:12, harvestHullSplitPct:10, sprayDryWindowHours:6,
+    lat:-35.73, lon:174.32, timezone:"Pacific/Auckland",
+    note:"High humidity — extend spray dry window and monitor blight closely.",
+  },
+  // Auckland / West Auckland: clay-heavy soils, moderate rainfall, volcanic
+  "Auckland / West Auckland, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:35, irrigationTargetMax:65,
+    pestThreshold:15, harvestHullSplitPct:10, sprayDryWindowHours:4,
+    lat:-36.87, lon:174.63, timezone:"Pacific/Auckland",
+    note:"Heavy clay soils common — test drainage. pH 6.0–7.0 optimal.",
+  },
+  // Waikato: fertile alluvial soils, good walnut country
+  "Waikato, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:35, irrigationTargetMax:65,
+    pestThreshold:15, harvestHullSplitPct:10, sprayDryWindowHours:4,
+    lat:-37.78, lon:175.28, timezone:"Pacific/Auckland",
+    note:"Deep alluvial soils. Well-suited to Chandler and Howard.",
+  },
+  // Bay of Plenty: warmer, higher husk fly risk
+  "Bay of Plenty, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:35, irrigationTargetMax:65,
+    pestThreshold:10, harvestHullSplitPct:8, sprayDryWindowHours:4,
+    lat:-37.93, lon:176.86, timezone:"Pacific/Auckland",
+    note:"Warm summers — higher husk fly pressure, lower action threshold.",
+  },
+  // Gisborne / Hawke's Bay: drier, warmer, limestone soils, premium growing region
+  "Gisborne / Hawke's Bay, NZ": {
+    soilPhMin:6.2, soilPhMax:7.2, irrigationTargetMin:30, irrigationTargetMax:60,
+    pestThreshold:15, harvestHullSplitPct:8, sprayDryWindowHours:3,
+    lat:-39.65, lon:176.87, timezone:"Pacific/Auckland",
+    note:"Drier climate — irrigation critical. Excellent walnut growing conditions.",
+  },
+  // Manawatu-Whanganui: variable soils, moderate conditions
+  "Manawatū-Whanganui, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:35, irrigationTargetMax:65,
+    pestThreshold:15, harvestHullSplitPct:10, sprayDryWindowHours:4,
+    lat:-40.35, lon:175.61, timezone:"Pacific/Auckland",
+    note:"Variable soils — soil test essential before planting.",
+  },
+  // Nelson / Marlborough: sunny, drier, excellent for walnuts
+  "Nelson / Marlborough, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:30, irrigationTargetMax:60,
+    pestThreshold:15, harvestHullSplitPct:8, sprayDryWindowHours:3,
+    lat:-41.27, lon:173.28, timezone:"Pacific/Auckland",
+    note:"High sunshine hours. Irrigation essential in summer. Good for Chandler.",
+  },
+  // Canterbury: cold winters, hot summers, frost risk, alkaline soils possible
+  "Canterbury, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:30, irrigationTargetMax:60,
+    pestThreshold:15, harvestHullSplitPct:10, sprayDryWindowHours:3,
+    lat:-43.53, lon:172.64, timezone:"Pacific/Auckland",
+    note:"Check for alkaline soils in drier areas. Late frosts can damage blossom.",
+  },
+  // Otago: cooler, good chilling hours, shorter season
+  "Otago, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:30, irrigationTargetMax:60,
+    pestThreshold:15, harvestHullSplitPct:12, sprayDryWindowHours:3,
+    lat:-45.88, lon:170.50, timezone:"Pacific/Auckland",
+    note:"Cool climate suits Franquette. Later hull split trigger. Short season.",
+  },
+  // Southland: marginal for commercial walnuts, short season
+  "Southland, NZ": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:35, irrigationTargetMax:65,
+    pestThreshold:15, harvestHullSplitPct:12, sprayDryWindowHours:4,
+    lat:-46.41, lon:168.36, timezone:"Pacific/Auckland",
+    note:"Marginal climate — select frost-hardy varieties. Short growing season.",
+  },
+  // ── Australia ────────────────────────────────────────────────────────
+  // Tasmania: similar to Canterbury NZ, cool, good chilling, quality nuts
+  "Tasmania, Australia": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:35, irrigationTargetMax:65,
+    pestThreshold:15, harvestHullSplitPct:10, sprayDryWindowHours:4,
+    lat:-42.88, lon:147.33, timezone:"Australia/Hobart",
+    note:"Excellent chilling hours. Watch for late spring frosts. Codling moth present.",
+  },
+  // Victoria: warm to hot summers, diverse soils
+  "Victoria, Australia": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:30, irrigationTargetMax:60,
+    pestThreshold:15, harvestHullSplitPct:8, sprayDryWindowHours:4,
+    lat:-36.86, lon:144.28, timezone:"Australia/Melbourne",
+    note:"Hot summers — irrigation critical. Watch soil pH in wetter high country areas.",
+  },
+  // NSW: variable — tablelands best for walnuts
+  "New South Wales, Australia": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:30, irrigationTargetMax:60,
+    pestThreshold:15, harvestHullSplitPct:8, sprayDryWindowHours:4,
+    lat:-33.87, lon:151.21, timezone:"Australia/Sydney",
+    note:"Southern tablelands are best suited. High altitude reduces heat stress.",
+  },
+  // South Australia: dry, alkaline soils common, needs pH monitoring
+  "South Australia, Australia": {
+    soilPhMin:6.0, soilPhMax:7.2, irrigationTargetMin:25, irrigationTargetMax:55,
+    pestThreshold:15, harvestHullSplitPct:8, sprayDryWindowHours:3,
+    lat:-34.93, lon:138.60, timezone:"Australia/Adelaide",
+    note:"Alkaline soils common — monitor pH carefully. Irrigation essential.",
+  },
+  // Western Australia: hot dry summers, irrigation-dependent
+  "Western Australia, Australia": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:25, irrigationTargetMax:55,
+    pestThreshold:15, harvestHullSplitPct:8, sprayDryWindowHours:3,
+    lat:-31.95, lon:115.86, timezone:"Australia/Perth",
+    note:"Very hot summers — drip irrigation essential. High evapotranspiration.",
+  },
+  // Queensland: generally too warm for walnuts except high altitude
+  "Queensland, Australia": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:30, irrigationTargetMax:60,
+    pestThreshold:12, harvestHullSplitPct:8, sprayDryWindowHours:4,
+    lat:-27.47, lon:153.02, timezone:"Australia/Brisbane",
+    note:"Only viable at altitude (600m+). Insufficient chilling hours in lowlands.",
+  },
+  // Fallback
+  "Other": {
+    soilPhMin:6.0, soilPhMax:7.0, irrigationTargetMin:35, irrigationTargetMax:65,
+    pestThreshold:15, harvestHullSplitPct:10, sprayDryWindowHours:4,
+    lat:-36.87, lon:174.63, timezone:"Pacific/Auckland",
+    note:null,
+  },
+};
+
+export function getRegionDefaults(region) {
+  return REGION_DEFAULTS[region] || REGION_DEFAULTS["Other"];
+}
 export const WALNUT_VARIETIES = ["Chandler","Howard","Franquette","Lara","Fernor","Rex","Midland","Cisco","Payne","Other"];
 export const DATA_TYPES = ["Yield","Soil Moisture","Soil pH","Pest Count","Kernel Quality","Irrigation Usage","Fertiliser Applied","Temperature","Rainfall","Other"];
 export const MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
